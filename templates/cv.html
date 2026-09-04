@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}CV — {{ config.extra.author }}{% endblock title %}
+
+{% block content %}
+<section class="hero">
+  <h1>{{ config.extra.author }}</h1>
+  <p class="tagline">{{ config.extra.tagline }}</p>
+  <div class="cv-meta">
+    <span><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></span>
+    <span><a href="{{ config.extra.github }}">github.com/iSaborit</a></span>
+    <span><a href="{{ config.extra.linkedin }}">LinkedIn</a></span>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Summary</h2>
+  <p>{{ config.extra.cv.summary }}</p>
+</section>
+
+<section class="section">
+  <h2>Education</h2>
+  <div class="cv-entry">
+    <h3>INSA Toulouse — École d'Ingénieur Informatique et Réseaux</h3>
+    <p class="period">4th year · specializing in SIEC (Systèmes Informatiques Embarqués Critiques)</p>
+    <ul>
+      <li>Engineering program focused on computer science and networks, specializing in critical embedded systems.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Focus Areas</h2>
+  <ul>
+    <li>Operating systems & microkernel design</li>
+    <li>Experimental systems development</li>
+    <li>Developer tools & systems visualization</li>
+    <li>Human–system interaction & new interfaces</li>
+    <li>Critical & real-time embedded systems</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Experience</h2>
+  {% for job in config.extra.experience %}
+  <div class="cv-entry">
+    <h3>{{ job.company }}</h3>
+    <p class="role">{{ job.role }}</p>
+    <p class="period">{{ job.period }}</p>
+    <ul>
+      {% for hl in job.highlights %}<li>{{ hl }}</li>{% endfor %}
+    </ul>
+    <p class="period">{{ job.tech }}</p>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="section">
+  <h2>Projects</h2>
+  <p><em>Coming soon — real projects to be featured here and on the Projects page.</em></p>
+</section>
+
+<div class="cv-download">
+  <a class="btn" href="mailto:{{ config.extra.email }}?subject=Contact">Get in touch</a>
+</div>
+{% endblock content %}

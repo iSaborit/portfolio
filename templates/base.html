@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <meta name="description" content="{{ config.description }}">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-brand" href="{{ config.base_url }}">{{ config.title }}</a>
+      <ul class="nav-links">
+        <li><a href="{{ get_url(path='@/_index.md') }}">Home</a></li>
+        <li><a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a></li>
+        <li><a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a></li>
+        <li><a href="{{ get_url(path='@/cv.md') }}">CV</a></li>
+        <li><a href="{{ get_url(path='@/_index.md') }}#about">About</a></li>
+        <li><a href="{{ get_url(path='@/_index.md') }}#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="content">
+    {% block content %}{% endblock content %}
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-name">{{ config.extra.author }}</span>
+      <nav class="footer-nav">
+        <a href="{{ get_url(path='@/_index.md') }}">Home</a>
+        <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
+        <a href="{{ get_url(path='@/projects/_index.md') }}">Projects</a>
+        <a href="{{ get_url(path='@/cv.md') }}">CV</a>
+        <a href="{{ config.extra.github }}">GitHub</a>
+        <a href="{{ config.extra.linkedin }}">LinkedIn</a>
+        <a href="mailto:{{ config.extra.email }}">Email</a>
+      </nav>
+    </div>
+    <p class="footer-copy">&copy; {{ now() | date(format="%Y") }} {{ config.extra.author }}</p>
+  </footer>
+</body>
+</html>

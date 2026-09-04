@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }} — {{ config.extra.tagline }}{% endblock title %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-inner">
+    {% if config.extra.profile_image %}
+    <img class="profile" src="{{ get_url(path=config.extra.profile_image) }}" alt="Profile photo of {{ config.extra.author }}">
+    {% endif %}
+    <h1>{{ config.extra.author }}</h1>
+    <p class="tagline">{{ config.extra.tagline }}</p>
+    <p class="intro">{{ section.content | safe }}</p>
+    <p class="hero-cta"><a class="btn" href="{{ get_url(path='@/cv.md') }}">View CV</a></p>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <p>I'm a 4th-year student at INSA Toulouse studying engineering in Informatique et Réseaux, specializing in <strong>SIEC</strong> (Systèmes Informatiques Embarqués Critiques) — real-time and safety-critical embedded systems.</p>
+  <p>On the research & development side, I'm drawn to <strong>operating systems</strong> (microkernels especially), experimental systems, new interfaces, and the tools that shape how we build and visualize systems.</p>
+  <p>I care about concepts, tangible visualizations, and making complex systems legible through great developer tools.</p>
+</section>
+
+<section id="interests" class="section">
+  <h2>Focus Areas</h2>
+  <ul class="topic-list">
+    <li>Operating systems & microkernels</li>
+    <li>Experimental systems development</li>
+    <li>Developer tools & systems visualization</li>
+    <li>Human–system interaction & new interfaces</li>
+  </ul>
+</section>
+
+<section id="experience" class="section">
+  <h2>Professional Experience</h2>
+  {% for job in config.extra.experience %}
+  <div class="cv-entry">
+    <h3>{{ job.company }}</h3>
+    <p class="role">{{ job.role }}</p>
+    <p class="period">{{ job.period }}</p>
+    <ul>
+      {% for hl in job.highlights %}<li>{{ hl }}</li>{% endfor %}
+    </ul>
+    <p class="period"><a href="{{ job.url }}">{{ job.url_label }}</a></p>
+    <p class="period">{{ job.tech }}</p>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="projects" class="section">
+  <h2>Featured Projects</h2>
+  {% set projects = get_section(path="projects/_index.md") %}
+  <div class="cards">
+    {% for page in projects.pages | sort(attribute="date") | reverse %}{% if loop.index <= 3 %}
+    <article class="card">
+      <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+      <p>{{ page.description }}</p>
+      <span class="tags">{% for tag in page.taxonomies.tags %}<a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>{% endfor %}</span>
+    </article>
+    {% endif %}{% endfor %}
+  </div>
+  <p><a href="{{ projects.permalink }}">All projects →</a></p>
+</section>
+
+<section id="blog" class="section">
+  <h2>Latest Posts</h2>
+  {% set blog = get_section(path="blog/_index.md") %}
+  <ul class="post-list">
+    {% for page in blog.pages | sort(attribute="date") | reverse %}{% if loop.index <= 3 %}
+    <li>
+      <span class="date">{{ page.date | date(format="%b %d, %Y") }}</span>
+      <a href="{{ page.permalink }}">{{ page.title }}</a>
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
+  <p><a href="{{ blog.permalink }}">All posts →</a></p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Want to work together, discuss systems, or just say hi? Reach out by email or find me on GitHub / LinkedIn.</p>
+  <ul class="contact-links">
+    <li><a href="mailto:{{ config.extra.email }}">Personal</a></li>
+    <li><a href="mailto:{{ config.extra.univ_email }}">University</a></li>
+    <li><a href="{{ config.extra.github }}">GitHub</a></li>
+    <li><a href="{{ config.extra.linkedin }}">LinkedIn</a></li>
+  </ul>
+</section>
+{% endblock content %}

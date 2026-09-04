@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Tag: {{ term.name }} — {{ config.title }}{% endblock title %}
+
+{% block content %}
+<h1>Tag: {{ term.name }}</h1>
+<p><a href="{{ get_url(path='@/blog/_index.md') }}">← All posts</a></p>
+<ul class="post-list">
+  {% for page in term.pages %}
+  <li>
+    <span class="date">{{ page.date | date(format="%b %d, %Y") }}</span>
+    <a href="{{ page.permalink }}">{{ page.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

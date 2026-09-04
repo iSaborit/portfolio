@@ -1,0 +1,57 @@
+title = "Iker Saborit López"
+description = "Systems & interface engineer — microkernels, tools, and experimental systems development"
+
+# The URL the site will be built for
+base_url = "https://example.com"
+compile_sass = false
+build_search_index = true
+minify_html = false
+
+taxonomies = [
+  { name = "tags", feed = false },
+]
+
+[markdown]
+
+[extra]
+author = "Iker Saborit López"
+profile_image = "/img/profile.png"
+tagline = "Systems & Interface Engineer"
+email = "iker.saborit05@gmail.com"
+univ_email = "saborit-lope@insa-toulouse.fr"
+github = "https://github.com/iSaborit"
+linkedin = "https://fr.linkedin.com/in/ikersaborit"
+
+[extra.cv]
+summary = "Systems & interface engineer in training, focused on operating systems, microkernels, and the developer tools that make complex systems legible."
+
+[[extra.experience]]
+company = "GE Vernova — Laboratoire Oksman Seraphin"
+role = "Software Engineering Intern"
+period = "Jul 2026 – Sep 2026 · Full-time · 3 months"
+url = "https://www.gevernova.com/electrification/services/laboratoire-oksman-seraphin/index"
+url_label = "gevernova.com/laboratoire-oksman-seraphin"
+tech = "Rust · Python · Playwright · egui · tokio · serde"
+highlights = [
+  "Automated processes on the logistics sector of the enterprise with time/cost-free verifications, cutting errors at a critical stage by 80%.",
+  "Built an ETL tool in Rust to produce human-readable outputs, using crates such as calamine, egui, and serde.",
+  "Developed a tool to detect database errors and suggest actionable solutions.",
+  "Saved ~95% of the time spent producing \"REX\" (Return of Experience) reports for clients — from 8 hours down to ~25 minutes.",
+]
+
+[extra.rosepine]
+base = "#191724"
+surface = "#1f1d2e"
+overlay = "#26233a"
+muted = "#6e6a86"
+subtle = "#908caa"
+text = "#e0def4"
+love = "#eb6f92"
+gold = "#f6c177"
+rose = "#ebbcba"
+pine = "#31748f"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+highlight_low = "#21202e"
+highlight_med = "#403d52"
+highlight_high = "#524f67"
