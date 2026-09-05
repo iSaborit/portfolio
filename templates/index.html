@@ -17,9 +17,9 @@
 
 <section id="about" class="section">
   <h2>About</h2>
-  <p>I'm a 4th-year student at INSA Toulouse studying engineering in Informatique et Réseaux, specializing in <strong>SIEC</strong> (Systèmes Informatiques Embarqués Critiques) — real-time and safety-critical embedded systems.</p>
-  <p>On the research & development side, I'm drawn to <strong>operating systems</strong> (microkernels especially), experimental systems, new interfaces, and the tools that shape how we build and visualize systems.</p>
-  <p>I care about concepts, tangible visualizations, and making complex systems legible through great developer tools.</p>
+  <p>I'm a 4th-year engineering student at INSA Toulouse (Informatique et Réseaux), specializing in <strong>SIEC</strong> — real-time and safety-critical embedded systems. That's the responsible half of me.</p>
+  <p>The other half just likes to take things apart. I'm drawn to <strong>operating systems</strong> (microkernels especially), experimental systems, new interfaces, and the tools that make complex systems legible instead of intimidating.</p>
+  <p>Mostly I care about building things that are actually useful — whether that's a kernel design in my head or an end-to-end tool that shaves hours off a tedious workflow.</p>
 </section>
 
 <section id="interests" class="section">
@@ -42,8 +42,20 @@
     <ul>
       {% for hl in job.highlights %}<li>{{ hl }}</li>{% endfor %}
     </ul>
-    <p class="period"><a href="{{ job.url }}">{{ job.url_label }}</a></p>
+    {% if job.url %}<p class="period"><a href="{{ job.url }}">{{ job.url_label }}</a></p>{% endif %}
     <p class="period">{{ job.tech }}</p>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="education" class="section">
+  <h2>Education</h2>
+  {% for edu in config.extra.education %}
+  <div class="cv-entry">
+    <h3>{{ edu.school }}</h3>
+    <p class="role">{{ edu.program }}</p>
+    <p class="period">{{ edu.period }}</p>
+    <ul>{% for d in edu.details %}<li>{{ d }}</li>{% endfor %}</ul>
   </div>
   {% endfor %}
 </section>
@@ -52,13 +64,15 @@
   <h2>Featured Projects</h2>
   {% set projects = get_section(path="projects/_index.md") %}
   <div class="cards">
-    {% for page in projects.pages | sort(attribute="date") | reverse %}{% if loop.index <= 3 %}
+    {% for page in projects.pages | sort(attribute="date") | reverse %}
     <article class="card">
       <h3><a href="{{ page.permalink }}">{{ page.title }}</a></h3>
+      {% if page.extra.status %}<span class="status">{{ page.extra.status }}</span>{% endif %}
       <p>{{ page.description }}</p>
       <span class="tags">{% for tag in page.taxonomies.tags %}<a class="tag" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">{{ tag }}</a>{% endfor %}</span>
+      {% if page.extra.github %}<span class="card-links"><a class="github-link" href="{{ page.extra.github }}">GitHub →</a></span>{% endif %}
     </article>
-    {% endif %}{% endfor %}
+    {% endfor %}
   </div>
   <p><a href="{{ projects.permalink }}">All projects →</a></p>
 </section>

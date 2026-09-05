@@ -1,4 +1,4 @@
 +++
 title = "Home"
 +++
-Hi, I'm [Your Name] — I design and build web experiences that are fast, accessible, and delightful.
+I'm Iker — I like breaking computers to understand how they work, then building better ones. I work on operating systems and microkernels, the developer tools that make complex systems legible, and the occasional end-to-end tool that just saves people hours.

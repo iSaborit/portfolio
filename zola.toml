@@ -1,8 +1,8 @@
 title = "Iker Saborit López"
-description = "Systems & interface engineer — microkernels, tools, and experimental systems development"
+description = "Iker Saborit López — building operating systems and the tools that make complex systems legible"
 
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://iSaborit.github.io/portfolio/"
 compile_sass = false
 build_search_index = true
 minify_html = false
@@ -16,7 +16,7 @@ taxonomies = [
 [extra]
 author = "Iker Saborit López"
 profile_image = "/img/profile.png"
-tagline = "Systems & Interface Engineer"
+tagline = "microkernel enthusiast · tooling tinkerer · systems nerd"
 email = "iker.saborit05@gmail.com"
 univ_email = "saborit-lope@insa-toulouse.fr"
 github = "https://github.com/iSaborit"
@@ -24,6 +24,26 @@ linkedin = "https://fr.linkedin.com/in/ikersaborit"
 
 [extra.cv]
 summary = "Systems & interface engineer in training, focused on operating systems, microkernels, and the developer tools that make complex systems legible."
+
+[[extra.roles]]
+organization = "INSA Toulouse — student infrastructure"
+role = "Student root (system administration)"
+period = "2023 – Present · Volunteer"
+tech = "Linux · system administration · server management"
+highlights = [
+  "TODO: replace with real achievements. Managed student infrastructure as root: servers, services, and user accounts across INSA's student systems.",
+  "TODO: replace with real achievements. Provisioned and maintained shared services for the student body, dealing with real reliability, access-control, and scaling problems.",
+]
+
+[[extra.roles]]
+organization = "TutorINSA — private tutoring organization at INSA Toulouse"
+role = "Co-president (corresponsable)"
+period = "2026 – 2027 · Academic year"
+tech = "Organization · administration · teaching"
+highlights = [
+  "TODO: replace with real achievements. Running the tutoring organization that matches students with private tutors.",
+  "TODO: replace with real achievements. Managing the admin side: scheduling, tutor recruitment, coordination.",
+]
 
 [[extra.experience]]
 company = "GE Vernova — Laboratoire Oksman Seraphin"
@@ -37,6 +57,31 @@ highlights = [
   "Built an ETL tool in Rust to produce human-readable outputs, using crates such as calamine, egui, and serde.",
   "Developed a tool to detect database errors and suggest actionable solutions.",
   "Saved ~95% of the time spent producing \"REX\" (Return of Experience) reports for clients — from 8 hours down to ~25 minutes.",
+]
+
+[[extra.experience]]
+company = "Disalfarm — pharmacy logistics (Bayer · Boehringer Ingelheim · Novartis)"
+role = "IT & Systems Intern"
+period = "Jul 2024 – Sep 2024 · Full-time · 3 months"
+url = "https://www.disalfarm.com/en"
+url_label = "disalfarm.com"
+tech = "Oracle DB · SQL · C#"
+highlights = [
+  "Designed and developed a web application for tracking contracts, turning scattered manual follow-up into one findable system.",
+  "Handled database administration for internal processes on Oracle DB, keeping business-critical data reliable and queryable.",
+  "Collaborated with the technical team to integrate solutions into the data flow, seeing how individual fixes fit into a larger logistics pipeline.",
+  "Learned how precision and process discipline in a regulated pharma environment carry directly into rigorous systems work.",
+]
+
+[[extra.education]]
+school = "INSA Toulouse — Diplôme d'Ingénieur (M.Eng.)"
+program = "Informatique & Réseaux"
+period = "2023 – 2028 (expected) · 4th year · SIEC orientation"
+details = [
+  "Specializing in SIEC (Systèmes Informatiques Embarqués Critiques) — real-time and safety-critical embedded systems.",
+  "Coursework: operating systems, concurrent & real-time systems, computer architecture, embedded architecture (RTOS, drivers, cross-compilation), embedded systems security, dependability (sûreté de fonctionnement), and STM32/ARM microcontroller development.",
+  "IberINSA program — first year in a bilingual French/Spanish track within an international cohort.",
+  "Exchange semester at Warsaw University of Technology (WUT), Poland (2025–2026).",
 ]
 
 [extra.rosepine]

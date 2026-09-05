@@ -20,13 +20,14 @@
 
 <section class="section">
   <h2>Education</h2>
+  {% for edu in config.extra.education %}
   <div class="cv-entry">
-    <h3>INSA Toulouse — École d'Ingénieur Informatique et Réseaux</h3>
-    <p class="period">4th year · specializing in SIEC (Systèmes Informatiques Embarqués Critiques)</p>
-    <ul>
-      <li>Engineering program focused on computer science and networks, specializing in critical embedded systems.</li>
-    </ul>
+    <h3>{{ edu.school }}</h3>
+    <p class="role">{{ edu.program }}</p>
+    <p class="period">{{ edu.period }}</p>
+    <ul>{% for d in edu.details %}<li>{{ d }}</li>{% endfor %}</ul>
   </div>
+  {% endfor %}
 </section>
 
 <section class="section">
@@ -57,7 +58,16 @@
 
 <section class="section">
   <h2>Projects</h2>
-  <p><em>Coming soon — real projects to be featured here and on the Projects page.</em></p>
+  {% set projects = get_section(path="projects/_index.md") %}
+  <ul>
+    {% for page in projects.pages | sort(attribute="date") | reverse %}
+    <li>
+      <a href="{{ page.permalink }}">{{ page.title }}</a>{% if page.extra.status %} <span class="status">{{ page.extra.status }}</span>{% endif %}
+      {% if page.extra.github %}<a class="github-link" href="{{ page.extra.github }}"> · GitHub</a>{% endif %}
+      — {{ page.description }}
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 
 <div class="cv-download">

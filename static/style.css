@@ -259,6 +259,34 @@ a.tag:hover {
   text-decoration: none;
 }
 
+.status {
+  flex: none;
+  background-color: var(--highlight-low);
+  color: var(--foam);
+  border: 1px solid var(--highlight-high);
+  border-radius: 12px;
+  padding: 0.12rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.github-link {
+  flex: none;
+  color: var(--iris);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  color: var(--foam);
+  text-decoration: underline;
+}
+
+.card-links {
+  display: block;
+  margin-top: 0.5rem;
+}
+
 /* Post list */
 .post-list {
   list-style: none;
