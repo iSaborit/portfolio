@@ -7,6 +7,10 @@
         <loc>https://iSaborit.github.io/portfolio/blog/</loc>
     </url>
     <url>
+        <loc>https://iSaborit.github.io/portfolio/blog/useless-projects/</loc>
+        <lastmod>2026-07-26</lastmod>
+    </url>
+    <url>
         <loc>https://iSaborit.github.io/portfolio/cv/</loc>
     </url>
     <url>
@@ -46,6 +50,9 @@
     </url>
     <url>
         <loc>https://iSaborit.github.io/portfolio/tags/javascript/</loc>
+    </url>
+    <url>
+        <loc>https://iSaborit.github.io/portfolio/tags/learning/</loc>
     </url>
     <url>
         <loc>https://iSaborit.github.io/portfolio/tags/macos/</loc>
