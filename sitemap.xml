@@ -7,8 +7,8 @@
         <loc>https://iSaborit.github.io/portfolio/blog/</loc>
     </url>
     <url>
-        <loc>https://iSaborit.github.io/portfolio/blog/welcome/</loc>
-        <lastmod>2026-09-02</lastmod>
+        <loc>https://iSaborit.github.io/portfolio/blog/kernel-roadmap/</loc>
+        <lastmod>2026-09-05</lastmod>
     </url>
     <url>
         <loc>https://iSaborit.github.io/portfolio/cv/</loc>
@@ -52,13 +52,16 @@
         <loc>https://iSaborit.github.io/portfolio/tags/javascript/</loc>
     </url>
     <url>
-        <loc>https://iSaborit.github.io/portfolio/tags/linux/</loc>
+        <loc>https://iSaborit.github.io/portfolio/tags/kernel/</loc>
     </url>
     <url>
-        <loc>https://iSaborit.github.io/portfolio/tags/meta/</loc>
+        <loc>https://iSaborit.github.io/portfolio/tags/macos/</loc>
     </url>
     <url>
         <loc>https://iSaborit.github.io/portfolio/tags/networking/</loc>
+    </url>
+    <url>
+        <loc>https://iSaborit.github.io/portfolio/tags/os/</loc>
     </url>
     <url>
         <loc>https://iSaborit.github.io/portfolio/tags/redis/</loc>
