@@ -2,7 +2,6 @@
 title = "I'm Building a Microkernel in Rust — Here's My Roadmap"
 date = 2026-09-05
 description = "Four chapters of a plan to get from shipped developer tools to a real microkernel: what I'm building, in what order, and why."
-draft = true
 [taxonomies]
 tags = ["rust", "kernel", "os", "systems"]
 +++

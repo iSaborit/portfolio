@@ -10,8 +10,10 @@
     {% endif %}
     <h1>{{ config.extra.author }}</h1>
     <p class="tagline">{{ config.extra.tagline }}</p>
+    {% if config.extra.location %}<p class="location">{{ config.extra.location }}</p>{% endif %}
+    {% if config.extra.availability %}<p class="availability">{{ config.extra.availability }}</p>{% endif %}
     <p class="intro">{{ section.content | safe }}</p>
-    <p class="hero-cta"><a class="btn" href="{{ get_url(path='@/cv.md') }}">View CV</a></p>
+    <p class="hero-cta"><a class="btn" href="{{ get_url(path='@/cv.md') }}">View CV</a> <a class="btn btn-secondary" href="{{ get_url(path='@/projects/_index.md') }}">Projects</a></p>
   </div>
 </section>
 
@@ -59,6 +61,27 @@
   </div>
   {% endfor %}
 </section>
+
+<section id="leadership" class="section">
+  <h2>Leadership & Service</h2>
+  {% for r in config.extra.roles %}
+  <div class="cv-entry">
+    <h3>{{ r.organization }}</h3>
+    <p class="role">{{ r.role }}</p>
+    <p class="period">{{ r.period }} · {{ r.tech }}</p>
+    <ul>{% for hl in r.highlights %}<li>{{ hl }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</section>
+
+{% if config.extra.languages %}
+<section id="languages" class="section">
+  <h2>Languages</h2>
+  <ul class="topic-list">
+    {% for lang in config.extra.languages %}<li>{{ lang.language }} — {{ lang.level }}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
 
 <section id="projects" class="section">
   <h2>Featured Projects</h2>

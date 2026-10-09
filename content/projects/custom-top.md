@@ -6,7 +6,7 @@ description = "A basic process monitoring tool for macOS, written in C."
 status = "shipped"
 github = "https://github.com/iSaborit/custom_top"
 [taxonomies]
-tags = ["c", "linux", "systems"]
+tags = ["c", "macos", "systems"]
 +++
 
 A `top`-style process monitor written in C for macOS. Displays running processes and their status — the systems exercise of understanding what the OS is actually doing under the hood.

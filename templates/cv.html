@@ -6,6 +6,7 @@
 <section class="hero">
   <h1>{{ config.extra.author }}</h1>
   <p class="tagline">{{ config.extra.tagline }}</p>
+  {% if config.extra.availability %}<p class="availability">{{ config.extra.availability }}</p>{% endif %}
   <div class="cv-meta">
     <span><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></span>
     <span><a href="{{ config.extra.github }}">github.com/iSaborit</a></span>
@@ -55,6 +56,27 @@
   </div>
   {% endfor %}
 </section>
+
+<section class="section">
+  <h2>Leadership & Service</h2>
+  {% for r in config.extra.roles %}
+  <div class="cv-entry">
+    <h3>{{ r.organization }}</h3>
+    <p class="role">{{ r.role }}</p>
+    <p class="period">{{ r.period }} · {{ r.tech }}</p>
+    <ul>{% for hl in r.highlights %}<li>{{ hl }}</li>{% endfor %}</ul>
+  </div>
+  {% endfor %}
+</section>
+
+{% if config.extra.languages %}
+<section class="section">
+  <h2>Languages</h2>
+  <ul>
+    {% for lang in config.extra.languages %}<li>{{ lang.language }} — {{ lang.level }}</li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
 
 <section class="section">
   <h2>Projects</h2>
