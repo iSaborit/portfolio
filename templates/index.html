@@ -100,9 +100,10 @@
   <p><a href="{{ projects.permalink }}">All projects →</a></p>
 </section>
 
+{% set blog = get_section(path="blog/_index.md") %}
+{% if blog.pages %}
 <section id="blog" class="section">
   <h2>Latest Posts</h2>
-  {% set blog = get_section(path="blog/_index.md") %}
   <ul class="post-list">
     {% for page in blog.pages | sort(attribute="date") | reverse %}{% if loop.index <= 3 %}
     <li>
@@ -113,6 +114,7 @@
   </ul>
   <p><a href="{{ blog.permalink }}">All posts →</a></p>
 </section>
+{% endif %}
 
 <section id="contact" class="section">
   <h2>Contact</h2>
